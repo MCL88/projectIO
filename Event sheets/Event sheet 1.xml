@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
+        <event-block sid="334167157619779">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="870169407920817" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="968143719853970" type="pl" />
+            </actions>
+        </event-block>
+        <comment>Allow WASD as alternate controls to arrow keys.</comment>
+        <event-block sid="226336407356401">
+            <conditions>
+                <condition id="2" name="Key is down" sid="821212473271459" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="663843213363517" type="pl">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="505787044894869">
+            <conditions>
+                <condition id="2" name="Key is down" sid="848385128520194" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="374705927786392" type="pl">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="141171405529502" type="pl">
+                    <param id="0" name="Angle">-20</param>
+                </action>
+                <action id="-8" name="Set angle" sid="249109059464166" type="Sprite2">
+                    <param id="0" name="Angle">-20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="160079371347359">
+            <conditions>
+                <condition id="2" name="Key is down" sid="511107334079486" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="208531735570691" type="pl" />
+            </actions>
+        </event-block>
+        <event-block sid="575583896723693">
+            <conditions>
+                <condition id="2" name="Key is down" sid="177245156747543" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="921914657217382" type="pl">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="-8" name="Set angle" sid="474947669670785" type="pl">
+                    <param id="0" name="Angle">20</param>
+                </action>
+                <action id="-8" name="Set angle" sid="974156993345383" type="Sprite2">
+                    <param id="0" name="Angle">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Mirror the player&apos;s image so they appear facing the right way when moving left or right.</comment>
+        <event-block any="1" sid="113071601045822">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="777668515826580" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="292392074765724" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="648159707242679" type="pl">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="859307942847106" type="Sprite2">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="157705106234744">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="639265899274182" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="173230238439583" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="333838176304539" type="pl">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-8" name="Set angle" sid="646251978521348" type="Sprite2">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>If the player falls off the bottom of the layout, restart the level.</comment>
+        <event-block disabled="1" sid="366502965874251">
+            <conditions />
+            <actions>
+                <action id="-26" name="Restart layout" sid="153191213961056" type="System" />
+            </actions>
+        </event-block>
+        <event-block any="1" sid="563645149797633">
+            <conditions>
+                <condition id="3" name="On key released" sid="278287889631757" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+                <condition id="3" name="On key released" sid="552415390736917" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="917603911671956" type="pl">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="649126227071991">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="727860452679849" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" disabled="1" id="0" name="Pin to object" sid="840027057914003" type="ombra">
+                    <param id="0" name="Pin to">pl</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="842643420910195" type="Sprite2">
+                    <param id="0" name="Pin to">pl</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="577394326363965">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="278211471689660" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="705668267881687" type="ombra">
+                    <param id="0" name="X">pl.X</param>
+                    <param id="1" name="Y">pl.y+50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="715789255544694">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="595464205778224" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>
